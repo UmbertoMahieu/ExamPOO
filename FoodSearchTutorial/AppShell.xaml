@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="FoodSearchTutorial.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:view="clr-namespace:FoodSearchTutorial.View"
+    Shell.FlyoutBehavior="Disabled">
+<!--Rajouter un menu inférieur avec la possibilité de naviguer entre les différentes vues -->
+    <TabBar>
+        <ShellContent
+        Title="Produits"
+        Icon="product.png"
+        ContentTemplate="{DataTemplate view:MainPage}"
+        Route="MainPage" />
+
+        <ShellContent
+        Title="Rechercher"
+        Icon="search.png"
+        ContentTemplate="{DataTemplate view:SearchPage}"
+        Route="SearchPage" />
+
+        <ShellContent
+        Title="Réglages"
+        Icon="settings.png"
+        ContentTemplate="{DataTemplate view:SettingsPage}"
+        Route="SettingsPage" />
+    </TabBar>
+
+</Shell>
