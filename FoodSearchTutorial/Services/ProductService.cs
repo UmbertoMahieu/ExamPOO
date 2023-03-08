@@ -50,11 +50,11 @@ public class ProductService //permet d'accéder et d'aller chercher les données
 
         return products;
     }
-    /*
-    private static string GetNutriScoreFilter(int tagId)
+    
+    private static string GetNutriScoreFilter(int tagId) //méthod qui permet de récupérer les produits selon le nutriscore sélectionné
     {
         var nutriScore = Settings.NutriScore;
 
-        return ("ALL" == nutriScore) ? string.Empty : $"tagtype_{tagId}=nutrition_grades&tag_contains_{tagId}=contains&tag_{tagId}={nutriScore}";
-    }*/
+        return ("ALL" == nutriScore) ? string.Empty : $"tagtype_{tagId}=nutrition_grades&tag_contains_{tagId}=contains&tag_{tagId}={nutriScore}"; //on rajoute le nutriscore souhaité à la recherche url 
+    }
 }

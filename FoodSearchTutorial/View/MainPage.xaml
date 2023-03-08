@@ -59,7 +59,7 @@
 
                                     <Image Grid.Column="2"
                                            Aspect="AspectFit"
-                                           Source="{Binding NustriscoreGradeImage}"
+                                           Source="{Binding NutriscoreGradeImage}"
                                            WidthRequest="72"
                                            HeightRequest="72"/>
 

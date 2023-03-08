@@ -14,7 +14,7 @@ public partial class MainPage : ContentPage
         BindingContext = viewModel;
     }
 
-    protected override async void OnAppearing()
+    protected override async void OnAppearing() //méthode permettant d'afficher les produits au rafraichissement
     {
         productsCollection.ItemsSource = viewModel.Products;
 
@@ -27,16 +27,16 @@ public partial class MainPage : ContentPage
         base.OnAppearing();
     }
 
-    protected override async void OnNavigatedTo(NavigatedToEventArgs args)
+    protected override async void OnNavigatedTo(NavigatedToEventArgs args) // méthode qui se produit lorsqu'on navigue dans l'appli. 
     {
-        if (!string.IsNullOrEmpty(viewModel.SearchTerm))
+        if (!string.IsNullOrEmpty(viewModel.SearchTerm)) //on vérifie si on a fait une recherche (et si oui on appelle la fonction de recherche avec le searchterms quand on navigue vers cette page
         {
             await viewModel.SearchProductsCommand.ExecuteAsync(null);
         }
 
-        if (Parent is ShellSection && ((ShellSection)Parent).Route == nameof(SearchPage))
+        if (Parent is ShellSection && ((ShellSection)Parent).Route == "IMPL_SearchPage") //Permet de détecter qu'on vient de naviguer depuis la barre de recherche et pas autrement
         {
-            viewModel.Title = viewModel.SearchedTitle;
+            viewModel.Title = viewModel.SearchedTitle; //si la condition est respectée, on utilise le titre du produit recherché
             productsCollection.ItemsSource = viewModel.SearchedProducts;
         }
         else

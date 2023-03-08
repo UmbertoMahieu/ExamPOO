@@ -1,9 +1,12 @@
+using FoodSearchTutorial.ViewModel;
+
 namespace FoodSearchTutorial.View;
 
 public partial class DetailsPage : ContentPage
 {
-	public DetailsPage()
+	public DetailsPage(ProductDetailsViewModel viewModel)
 	{
 		InitializeComponent();
+		BindingContext = viewModel;
 	}
 }

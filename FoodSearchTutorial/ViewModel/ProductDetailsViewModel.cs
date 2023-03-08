@@ -9,7 +9,7 @@ namespace FoodSearchTutorial.ViewModel
         Product product; //le produit pour lequle on va afficher le détail
 
         [RelayCommand]
-        async Task OpenProductAsync(Product product)
+        async Task OpenProductAsync(Product product) //Fonction qui va permettre d'ouvrir la page d'open foodfact lorsqu'on appuie sur le lien de la fiche produit détalilée
         {
             if (product is null)
                 return;

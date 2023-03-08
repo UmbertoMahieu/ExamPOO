@@ -1,9 +1,22 @@
+using FoodSearchTutorial.ViewModel;
+
 namespace FoodSearchTutorial.View;
 
 public partial class SearchPage : ContentPage
 {
-	public SearchPage()
-	{
-		InitializeComponent();
-	}
+    ProductsSearchViewModel viewModel;
+
+    public SearchPage(ProductsSearchViewModel viewModel)
+    {
+        InitializeComponent();
+        this.viewModel = viewModel;
+        BindingContext = viewModel;
+    }
+
+    private async void SearchBar_SearchButtonPressed(object sender, EventArgs e) //on appelle la commande du ViewModel correspondant pour rechercher les produits
+    {
+        await viewModel.SearchProductsCommand.ExecuteAsync(searchBar.Text);
+
+        searchBar.Text = string.Empty; //vide le texte de la recherche après recherche
+    }
 }
