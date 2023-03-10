@@ -30,7 +30,7 @@ namespace FoodSearchTutorial.ViewModel
         }
 
         [RelayCommand]
-        void ClearSearchTermsHistory() //permet de suppirmer l'historique de recherche grace au boutton
+        public void ClearSearchTermsHistory() //permet de suppirmer l'historique de recherche grace au boutton
         {
             SearchTermsHistory.Clear();
 
